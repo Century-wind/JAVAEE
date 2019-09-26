@@ -1,4 +1,4 @@
-package cn.server;
+package cn.service;
 
 import cn.entity.Account;
 
@@ -8,7 +8,7 @@ import java.util.List;
  * 业务层接口
  */
 
-public interface IServer {
+public interface IService {
     List<Account> findAllAccount();
 
     Account findAccountByid(Integer accountId);

@@ -1,6 +1,6 @@
 package cn.test;
 
-import cn.server.IServer;
+import cn.service.IService;
 import cn.entity.Account;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
@@ -19,7 +19,7 @@ public class ServiceTest {
         //1. 获取容器
         ApplicationContext appcon = new ClassPathXmlApplicationContext("bean.xml");
         //2. 得到业务层对象
-        IServer is = appcon.getBean("Service", IServer.class);
+        IService is = appcon.getBean("Service", IService.class);
         //3. 执行方法
         List<Account> accounts = is.findAllAccount();
         for(Account account : accounts){
@@ -33,7 +33,7 @@ public class ServiceTest {
         //1. 获取容器
         ApplicationContext appcon = new ClassPathXmlApplicationContext("bean.xml");
         //2. 得到业务层对象
-        IServer is = appcon.getBean("Service", IServer.class);
+        IService is = appcon.getBean("Service", IService.class);
         //3. 执行方法
         Account account = is.findAccountByid(1);
         System.out.println(account);
@@ -48,7 +48,7 @@ public class ServiceTest {
         //1. 获取容器
         ApplicationContext appcon = new ClassPathXmlApplicationContext("bean.xml");
         //2. 得到业务层对象
-        IServer is = appcon.getBean("Service", IServer.class);
+        IService is = appcon.getBean("Service", IService.class);
         //3. 执行方法
         is.saveAccount(account);
         System.out.println("保存成功！");
@@ -59,7 +59,7 @@ public class ServiceTest {
         //1. 获取容器
         ApplicationContext appcon = new ClassPathXmlApplicationContext("bean.xml");
         //2. 得到业务层对象
-        IServer is = appcon.getBean("Service", IServer.class);
+        IService is = appcon.getBean("Service", IService.class);
         //3. 执行方法
         Account account = is.findAccountByid(3);
         account.setMoney(234f);
@@ -71,7 +71,7 @@ public class ServiceTest {
         //1. 获取容器
         ApplicationContext appcon = new ClassPathXmlApplicationContext("bean.xml");
         //2. 得到业务层对象
-        IServer is = appcon.getBean("Service", IServer.class);
+        IService is = appcon.getBean("Service", IService.class);
         //3. 执行方法
         is.deleteAccount(4);
     }

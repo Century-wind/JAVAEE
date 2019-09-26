@@ -1,7 +1,7 @@
-package cn.server.impl;
+package cn.service.impl;
 
 import cn.dao.IDao;
-import cn.server.IServer;
+import cn.service.IService;
 import cn.entity.Account;
 
 import java.util.List;
@@ -10,7 +10,7 @@ import java.util.List;
  * 业务层实现类
  */
 
-public class ServerImpl implements IServer {
+public class ServiceImpl implements IService {
     private IDao dao;
 
     public void setDao(IDao dao) {

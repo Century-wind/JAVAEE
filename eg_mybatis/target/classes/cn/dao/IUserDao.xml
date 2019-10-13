@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.dao.IUserDao">
+<!--    抽取重复的sql语句-->
+    <sql id="defaultUser">
+        select * from m_user
+    </sql>
+
+
+    <select id="findAll" resultType="user">
+        <include refid="defaultUser"></include>
+    </select>
+
+<!--    动态查询语句。。。-->
+</mapper>
